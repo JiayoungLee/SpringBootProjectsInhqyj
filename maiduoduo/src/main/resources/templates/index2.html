@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h3>欢迎进入 Maiduoduo 系统</h3>
+
+<shiro:hasRole name="admin">
+    <a href="">用户添加</a>
+    <a href="">用户删除</a>
+    <a href="">用户修改</a>
+    <a href="">用户查询</a>
+</shiro:hasRole>
+
+<shiro:hasAnyRoles name="admin, user">
+    公共主页
+</shiro:hasAnyRoles>
+
+<shiro:hasRole name="productor">
+    <a href="">产品添加</a>
+    <a href="">产品删除</a>
+    <a href="">产品修改</a>
+    <a href="">产品查询</a>
+</shiro:hasRole>
+</body>
+</html>
